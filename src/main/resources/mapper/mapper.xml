@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AppMapper">
+	
+	<select id="getBoardList" parameterType="hashMap" resultType="hashMap">
+		SELECT * FROM boardex;
+	</select>
+	
+	<delete id="deleteListOne">
+	 	DELETE FROM boardex
+		WHERE idx = #{idx};
+	</delete>
+	
+	<insert id="createListOne" parameterType="hashMap">
+		INSERT INTO boardex (title, crea_id) 
+		VALUES (#{title}, #{crea_id})
+	
+	</insert>
+	
+</mapper>
